@@ -14,6 +14,11 @@ export class CreateRoomComponent implements OnInit {
   }
 
   public createRoom() {
-    this.janusService.
+    this.janusService.createRoom()
+      .subscribe(
+        response => {
+          console.log(response)
+        }
+      )
   }
 }
