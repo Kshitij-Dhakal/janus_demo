@@ -20,3 +20,7 @@ RUN git clone https://github.com/meetecho/janus-gateway.git
 RUN cd janus-gateway && sh autogen.sh && ./configure --prefix=/opt/janus && make && make install && make configs && ./configure --disable-websockets --disable-data-channels --disable-rabbitmq --disable-mqtt
 
 ENV PATH=$PATH:/opt/janus/bin/
+
+EXPOSE 8088
+
+ENTRYPOINT [ "janus" ]
